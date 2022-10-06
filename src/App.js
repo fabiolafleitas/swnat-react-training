@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className="container is-fluid is-max-widescreen">
+      <div className="container is-fullhd">
         <Hero />
         <ProductList />
       </div>

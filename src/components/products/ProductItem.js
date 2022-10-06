@@ -1,12 +1,13 @@
 
-const ProductItem = ({name, description}) => {
+const ProductItem = ({ name, description, image }) => {
     return (
-        <div className="tile is-parent column is-one-third">
-            <article className="tile is-child box">
-                <p className="title is-5">{name}</p>
-                <p className="subtitle is-6">{description}</p>
-            </article>
-        </div>
+        <>
+            <figure className="image is-1by1">
+                <img style={{objectFit: "cover"}} src={image} alt={name} />
+            </figure>
+            <p className="title is-5">{name}</p>
+            <p className="subtitle is-6">{description}</p>
+        </>
     );
 }
 
