@@ -1,16 +1,17 @@
 import React from "react";
+import donutLogo from '../assets/images/donut-logo.svg';
 
 const Header = (props) => {
     return (
         <header className="navbar is-dark" role="navigation" aria-label="main navigation">
-            <div className="navbar-brand container is-fluid is-max-widescreen">
+            <div className="navbar-brand container is-fullhd">
                 <h5 className="navbar-item">
                     <span className="icon-text is-size-5">
                         <span className="icon">
-                            <i className="fas fa-utensils"></i>
+                        <img src={donutLogo} alt="Donut"/>
                         </span>
                         <span>
-                            React Vegan
+                            Donut Monsters
                         </span>
                     </span>
                 </h5>
