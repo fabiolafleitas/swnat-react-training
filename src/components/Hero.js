@@ -3,7 +3,7 @@ import donutMonsters from '../assets/images/donut-monsters.svg';
 
 const Hero = (props) => {
     return (
-        <section className="hero has-background-primary-light">
+        <section className="hero hero-light-background">
             <div className="hero-body columns is-vcentered">
                 <div className="column">
                     <h1 className="title is-1">Welcome</h1>
