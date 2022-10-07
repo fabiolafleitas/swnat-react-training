@@ -14,7 +14,7 @@ const Header = (props) => {
                     </span>
                 </span>
             </h5>
-            <span class="tag is-primary">0</span>
+            <span className="tag is-primary">0</span>
         </header>
     )
 }
