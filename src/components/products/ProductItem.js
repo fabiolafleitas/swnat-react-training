@@ -1,15 +1,10 @@
+import Image from "../ui/Image";
 
 const ProductItem = ({ name, description, price = 0, image }) => {
     return (
         <>
             <figure className="image is-1by1">
-                {/*TODO: add default image when the image doesn't exist*/}
-                <img style={{ objectFit: "cover" }} src={image || ''} alt={name}
-                    onError={({ currentTarget }) => {
-                        currentTarget.onerror = null; // prevents looping
-                        currentTarget.src = "https://as1.ftcdn.net/v2/jpg/02/11/01/88/500_F_211018896_81wCZzIA4pu0kYnu1zOmYw68hMsm1CEz.jpg";
-                    }}
-                />
+                <Image imgSrc={image} altText={name} />
             </figure>
             <div className="columns is-mobile mt-3">
                 <div className="column is-two-thirds">

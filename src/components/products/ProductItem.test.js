@@ -25,12 +25,6 @@ describe('product item', () => {
 
     it('renders the image', () => {
         render(<ProductItem {...productMock}></ProductItem>);
-        expect(screen.getByRole('img', { name: /product 1/i })).toBeInTheDocument();
+        expect(screen.getByAltText(/product 1/i)).toBeInTheDocument();
     })
-
-    xit('renders default image', () => {
-        render(<ProductItem {...productMock} image=''></ProductItem>);
-        expect(screen.getByRole('img', { name: /sad monster/i }).toHaveAttribute('src', 'sad-monster.png'));
-    })
-
 })
