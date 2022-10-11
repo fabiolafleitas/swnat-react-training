@@ -22,13 +22,13 @@ const ProductItem = ({ name, description, price = 0, image }) => {
                     <div className="buttons">
                         <button className="button is-primary is-light mr-0 mb-0" aria-label="Minus">
                             <span className="icon is-small">
-                                <i className="fa-solid fa-minus"></i>
+                                <i className="fa-solid fa-minus"/>
                             </span>
                         </button>
                         <span className="mr-1 ml-1">0</span>
                         <button className="button is-primary is-light mb-0" aria-label="Plus">
                             <span className="icon is-small">
-                                <i className="fa-solid fa-plus"></i>
+                                <i className="fa-solid fa-plus"/>
                             </span>
                         </button>
                     </div>
@@ -36,7 +36,7 @@ const ProductItem = ({ name, description, price = 0, image }) => {
                 <div className="column has-text-right">
                     <button className="button is-primary" aria-label="Add to Cart" title="Add to Cart">
                         <span className="icon is-small">
-                            <i className="fa-solid fa-cart-plus"></i>
+                            <i className="fa-solid fa-cart-plus"/>
                         </span>
                     </button>
                 </div>
