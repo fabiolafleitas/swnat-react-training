@@ -1,5 +1,5 @@
 import React from "react";
-import donutMonsters from '../assets/images/donut-monsters.svg';
+import donutMonsters from '../../assets/images/donut-monsters.svg';
 
 const Hero = (props) => {
     return (

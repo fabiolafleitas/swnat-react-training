@@ -1,5 +1,5 @@
 import React from "react";
-import donutLogo from '../assets/images/donut-logo.svg';
+import donutLogo from '../../assets/images/donut-logo.svg';
 
 const Header = (props) => {
     return (
