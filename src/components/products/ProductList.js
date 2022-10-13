@@ -11,9 +11,7 @@ const ProductList = ({products = []}) => {
                 <CardGrid>
                     {products.map(product => {
                         return (
-                            <Card key={product.id}>
-                                <ProductItem {...product} />
-                            </Card>
+                            <ProductItem {...product} key={product.id}/>
                         )
                     })}
                 </CardGrid>
