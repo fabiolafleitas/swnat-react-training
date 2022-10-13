@@ -1,8 +1,9 @@
 import Image from "../ui/Image";
+import Card from "../ui/Card";
 
 const ProductItem = ({ name, description, price = 0, image }) => {
     return (
-        <>
+        <Card>
             <figure className="image is-1by1">
                 <Image imgSrc={image} altText={name} />
             </figure>
@@ -41,7 +42,7 @@ const ProductItem = ({ name, description, price = 0, image }) => {
                     </button>
                 </div>
             </div>
-        </>
+        </Card>
     );
 }
 
