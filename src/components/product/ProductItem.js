@@ -1,11 +1,18 @@
 import Image from "../ui/Image";
 import Card from "../ui/Card";
+import Counter from "./Counter";
 
-const ProductItem = ({ name, description, price = 0, image }) => {
+const ProductItem = ({name, description, price = 0, image, amount}) => {
+    // let amount = 0;
+
+    function handleAddToCartClick(event){
+
+    }
+
     return (
         <Card>
             <figure className="image is-1by1">
-                <Image imgSrc={image} altText={name} />
+                <Image imgSrc={image} altText={name}/>
             </figure>
             <div className="columns is-mobile mt-3">
                 <div className="column is-two-thirds">
@@ -20,22 +27,10 @@ const ProductItem = ({ name, description, price = 0, image }) => {
 
             <div className="columns is-mobile">
                 <div className="column is-two-thirds">
-                    <div className="buttons">
-                        <button className="button is-primary is-light mr-0 mb-0" aria-label="Minus">
-                            <span className="icon is-small">
-                                <i className="fa-solid fa-minus"/>
-                            </span>
-                        </button>
-                        <span className="mr-1 ml-1">0</span>
-                        <button className="button is-primary is-light mb-0" aria-label="Plus">
-                            <span className="icon is-small">
-                                <i className="fa-solid fa-plus"/>
-                            </span>
-                        </button>
-                    </div>
+                    <Counter initialCount={amount}/>
                 </div>
                 <div className="column has-text-right">
-                    <button className="button is-primary" aria-label="Add to Cart" title="Add to Cart">
+                    <button onClick={handleAddToCartClick} className="button is-primary" aria-label="Add to Cart" title="Add to Cart">
                         <span className="icon is-small">
                             <i className="fa-solid fa-cart-plus"/>
                         </span>

@@ -26,6 +26,6 @@ describe('product list', () => {
 
     it('renders an error message if the product list is empty', () => {
         render(<ProductList/>);
-        expect(screen.getByText("No products found")).toBeInTheDocument();
+        expect(screen.getByText("No product found")).toBeInTheDocument();
     })
 })
