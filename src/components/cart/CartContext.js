@@ -2,9 +2,12 @@ import {createContext, useReducer} from "react";
 
 const CartContext = createContext({
     items: [],
-    add: () => {},
-    remove: () => {},
-    reset: () => {}
+    add: () => {
+    },
+    remove: () => {
+    },
+    reset: () => {
+    }
 })
 
 const defaultCartValues = {
@@ -17,22 +20,25 @@ const init = () => {
 
 const cartReducer = (state, action) => {
     switch (action.type) {
-        case 'add':
-            return { ...state.items}
+        case 'add': {
+            return {
+                ...state,
+                items: [...state.items, action.item]
+            }
+        }
     }
 }
-
 
 
 const CartContextProvider = (props) => {
     const [cartState, dispatch] = useReducer(cartReducer, defaultCartValues, init)
 
     function addItem(item) {
-        dispatch({type: "ADD", item});
+        dispatch({
+            type: "add",
+            item
+        });
     }
-
-
-
 
     return (<CartContext.Provider value={cartState}>
         {props.children}
