@@ -1,12 +1,17 @@
 import Image from "../ui/Image"
 import Card from "../ui/Card"
 import Counter from "./Counter"
+import { useContext, useRef } from 'react'
+import { CartContext } from '../cart/CartContext'
 
-const ProductItem = ({ name, description, price = 0, image }) => {
+const ProductItem = ({ id, name, description, price = 0, image }) => {
     let amount = 0
+    const cartContext = useContext(CartContext)
+    const countRef = useRef()
+    let product = { id, name, description, price, image, amount }
 
-    function handleAddToCartClick(event) {
-
+    function handleAddToCartClick() {
+        cartContext.add(product)
     }
 
     return (
