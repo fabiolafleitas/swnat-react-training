@@ -2,7 +2,7 @@ import Image from "../ui/Image"
 import Card from "../ui/Card"
 import Counter from "./Counter"
 import { useContext, useReducer } from 'react'
-import { CartContext } from '../cart/CartContext'
+import { CartContext } from '../cart/cartContext-latest'
 
 const initialCount = {
     count: 0
