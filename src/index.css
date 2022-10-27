@@ -12,9 +12,19 @@ code {
     monospace;
 }
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
 .hero-light-background {
   background: rgb(235,255,252);
   background: linear-gradient(180deg, rgba(235,255,252,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+.shadow {
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
 }
 
 @media only screen 
