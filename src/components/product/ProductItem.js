@@ -1,18 +1,18 @@
-import Image from "../ui/Image";
-import Card from "../ui/Card";
-import Counter from "./Counter";
+import Image from "../ui/Image"
+import Card from "../ui/Card"
+import Counter from "./Counter"
 
-const ProductItem = ({name, description, price = 0, image, amount}) => {
-    // let amount = 0;
+const ProductItem = ({ name, description, price = 0, image }) => {
+    let amount = 0
 
-    function handleAddToCartClick(event){
+    function handleAddToCartClick(event) {
 
     }
 
     return (
         <Card>
             <figure className="image is-1by1">
-                <Image imgSrc={image} altText={name}/>
+                <Image imgSrc={image} altText={name} />
             </figure>
             <div className="columns is-mobile mt-3">
                 <div className="column is-two-thirds">
@@ -27,18 +27,18 @@ const ProductItem = ({name, description, price = 0, image, amount}) => {
 
             <div className="columns is-mobile">
                 <div className="column is-two-thirds">
-                    <Counter initialCount={amount}/>
+                    <Counter initialCount={amount} />
                 </div>
                 <div className="column has-text-right">
                     <button onClick={handleAddToCartClick} className="button is-primary" aria-label="Add to Cart" title="Add to Cart">
                         <span className="icon is-small">
-                            <i className="fa-solid fa-cart-plus"/>
+                            <i className="fa-solid fa-cart-plus" />
                         </span>
                     </button>
                 </div>
             </div>
         </Card>
-    );
+    )
 }
 
-export default ProductItem;
+export default ProductItem
