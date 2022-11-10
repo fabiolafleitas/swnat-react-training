@@ -1,6 +1,6 @@
 import Image from '../ui/Image'
 import Card from '../ui/Card'
-import { CartContext } from '../cart/cartContext-latest'
+import { CartContext } from '../cart/CartContext'
 import { useState, useContext } from 'react'
 
 const ProductItem = ({ id, name, description, price = 0, image }) => {

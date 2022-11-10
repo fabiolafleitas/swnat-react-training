@@ -1,4 +1,4 @@
-import { products } from '../products/mockData'
+import { products } from '../product/mockData'
 
 const cartReducer = (state, action) => {
   switch (action.type) {

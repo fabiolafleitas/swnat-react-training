@@ -1,7 +1,10 @@
 import { createContext, useReducer } from 'react'
 import { cartReducer } from './reducer'
 
-const CartContext = createContext({items: {}})
+const CartContext = createContext({
+    items: {},
+    addItems: () => {}
+  })
 
 const intialState = {
   items: {}
@@ -19,7 +22,11 @@ function CartContextProvider({ children }) {
     addItems,
   }
 
-  return <CartContext.Provider value={value}>{children}</CartContext.Provider>
+  return (
+    <CartContext.Provider value={value}>
+      {children}
+    </CartContext.Provider>
+  )
 }
 
 export { CartContext, CartContextProvider }

@@ -1,4 +1,4 @@
-import { CartContext } from './cartContext-latest'
+import { CartContext } from './CartContext'
 import { useContext } from 'react'
 
 const productNameCss = {
