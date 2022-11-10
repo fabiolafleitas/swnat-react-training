@@ -1,17 +1,41 @@
 import Image from "../ui/Image"
 import Card from "../ui/Card"
 import Counter from "./Counter"
-import { useContext, useRef } from 'react'
+import { useContext, useReducer } from 'react'
 import { CartContext } from '../cart/CartContext'
 
+const initialCount = {
+    count: 0
+}
+
+function reducer(state, action) {
+    switch (action.type) {
+        case 'increment':
+            return { count: state.count + 1 }
+        case 'decrement':
+            return { count: state.count - 1 }
+        case 'reset':
+            return initialCount
+        default:
+            throw new Error()
+    }
+}
+
 const ProductItem = ({ id, name, description, price = 0, image }) => {
-    let amount = 0
+    const [state, dispatch] = useReducer(reducer, initialCount)
     const cartContext = useContext(CartContext)
-    const countRef = useRef()
-    let product = { id, name, description, price, image, amount }
 
     function handleAddToCartClick() {
+        const product = { id, name, description, price, image, amount:state.count }
         cartContext.add(product)
+    }
+
+    const increaseItemHandler = () => {
+        dispatch({type:'increment'})
+    }
+
+    const decreaseItemHandler = () => {
+        dispatch({type:'decrement'})
     }
 
     return (
@@ -32,7 +56,7 @@ const ProductItem = ({ id, name, description, price = 0, image }) => {
 
             <div className="columns is-mobile">
                 <div className="column is-two-thirds">
-                    <Counter initialCount={amount} />
+                    <Counter value={state.count} onMinusClick={decreaseItemHandler} onPlusClick={increaseItemHandler} />
                 </div>
                 <div className="column has-text-right">
                     <button onClick={handleAddToCartClick} className="button is-primary" aria-label="Add to Cart" title="Add to Cart">
