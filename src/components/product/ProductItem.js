@@ -2,7 +2,7 @@ import Image from "../ui/Image"
 import Card from "../ui/Card"
 import Counter from "./Counter"
 import { useContext, useReducer } from 'react'
-import { CartContext } from '../cart/cartContext-latest'
+import { CartContext } from '../cart/CartContext'
 
 const initialCount = {
     count: 0
@@ -26,8 +26,8 @@ const ProductItem = ({ id, name, description, price = 0, image }) => {
     const cartContext = useContext(CartContext)
 
     function handleAddToCartClick() {
-        const product = { id, name, description, price, image, amount:state.count }
-        cartContext.add(product)
+        const product = { id, amount:state.count }
+        cartContext.addItems(product)
     }
 
     const increaseItemHandler = () => {

@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react'
 import donutLogo from '../../assets/images/donut-logo.svg'
-import { CartContext } from '../cart/cartContext-latest'
+import { CartContext } from '../cart/CartContext'
 import { getTotalItems } from '../cart/reducer'
 import { Modal } from './Modal'
 import { Cart } from '../cart/Cart'

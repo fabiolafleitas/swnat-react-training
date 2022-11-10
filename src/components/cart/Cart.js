@@ -1,7 +1,7 @@
 import { useContext } from 'react'
-import { CartContext } from './cartContext-latest'
+import { CartContext } from './CartContext'
 import { getTotalPrice } from './reducer'
-import { products } from '../products/mockData'
+import { products } from '../product/mockData'
 import { CartItem } from './CartItem'
 
 export const Cart = () => {
