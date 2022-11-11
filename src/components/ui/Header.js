@@ -6,7 +6,7 @@ import { Modal } from './Modal'
 import { Cart } from '../cart/Cart'
 
 const Header = () => {
-  const { items } = useContext(CartContext)
+  const { items, checkPlacement } = useContext(CartContext)
   const [activeCart, setActiveCart] = useState(false)
 
   const totalItems = getTotalItems(items)
@@ -17,6 +17,7 @@ const Header = () => {
 
   const closeModalHandler = () => {
     setActiveCart(false)
+    checkPlacement()
   }
 
   return (
@@ -32,14 +33,13 @@ const Header = () => {
         </h5>
         <button
           className="button is-primary is-small"
-          disabled={totalItems === 0}
           onClick={showModalHandler}
         >
           {totalItems}
         </button>
       </header>
       <Modal isOpen={activeCart} onClose={closeModalHandler}>
-        <Cart />
+        <Cart onClose={closeModalHandler} />
       </Modal>
     </>
   )

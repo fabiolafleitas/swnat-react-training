@@ -1,3 +1,4 @@
+import Counter from '../product/Counter'
 import { CartContext } from './CartContext'
 import { useContext } from 'react'
 
@@ -19,7 +20,7 @@ const productImageCss = (url) => {
 }
 
 export const CartItem = ({ details, amount }) => {
-  const { addItems } = useContext(CartContext)
+  const { addItems, removeItems, deleteItem } = useContext(CartContext)
 
 
   const subTotal = details.price * amount
@@ -31,47 +32,32 @@ export const CartItem = ({ details, amount }) => {
     }
     addItems(itemToAdd)
   }
+  const removeItemHandler = () => {
+    const itemToRemove = {
+      id: details.id,
+      amount: 1
+    }
+    removeItems(itemToRemove)
+  }
+
+  const deleteItemHandler = () => {
+    deleteItem(details.id)
+  }
 
   return (
     <>
       <article className="is-flex is-justify-content-space-between is-align-items-center">
-        {/* <figure className="shadow">
-          <img
-            width={64}
-            height={64}
-            src={details.image}
-            alt={details.name}
-          />
-        </figure> */}
         <div style={productImageCss(details.image)}></div>
         
         <span style={productNameCss}>{details.name}</span>
 
-        <div className="buttons m-0">
-          <button
-            className="button is-primary is-light mr-0 mb-0"
-            aria-label="Minus"
-            disabled={!amount}
-            onClick={() => {}}
-          >
-            <span className="icon is-small">
-              <i className="fa-solid fa-minus" />
-            </span>
-          </button>
-          <span className="mr-1 ml-1">{amount}</span>
-          <button
-            className="button is-primary is-light mb-0"
-            aria-label="Plus"
-            onClick={addItemHandler}
-          >
-            <span className="icon is-small">
-              <i className="fa-solid fa-plus" />
-            </span>
-          </button>
+        <div className='mb-0'>
+          <Counter value={amount} onMinusClick={removeItemHandler} onPlusClick={addItemHandler} />
         </div>
 
         <h4>${subTotal}</h4>
-        <button class="button is-primary is-inverted">
+        <button className="button is-primary is-inverted"
+          onClick={deleteItemHandler}>
           <span className="icon is-small">
             <i className="fa-solid fa-xmark" />
           </span>
