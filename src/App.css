@@ -40,3 +40,21 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes zoom {
+  0% {
+    box-shadow: 0 0 0 0 #fff;
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.5, 1.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.cart-animation{
+  animation: zoom 0.4s;
+  box-shadow: 0 0 0 2em transparent;
+}
